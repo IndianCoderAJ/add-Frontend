@@ -162,7 +162,6 @@ export  function AddListTable() {
   } 
   
   function handlefilter(data){
-   console.log(data);
    setpageData((state) => ({
     ...state,
     filter:data.items
@@ -187,7 +186,6 @@ export  function AddListTable() {
   }
 
   return (
-
     <Container fixed>
      <Box sx={{ bgcolor: '', height: '150vh' }}>
      <Typography variant="h3" component="div" gutterBottom>
@@ -202,22 +200,16 @@ export  function AddListTable() {
           components={{ Toolbar: GridToolbarFilterButton }}
           getRowId={(e) => e._id}
           rows={list.rows? list.rows:[]}
-          // loading={loading}
           columns={state.columns}
           pageSize={pageData.perPage}
           paginationMode="server"
           disableSelectionOnClick={false}
           rowCount={list.totalItems? list.totalItems:0}
           onPageChange={handlePageChange}
-          //rowsPerPageOptions={[5]}
           filterMode='server'
-         // onCellClick={handleCellClick}
           onFilterModelChange={handlefilter}
           FilterPanel={null}
           onSortModelChange={handleSort}
-          // filterModel={{
-          //   items: [{ columnField: 'name', operatorValue: '', value: '' }],
-          // }}
           sortingMode='server'
         />
         { deleteDialogOpen.status &&
