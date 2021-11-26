@@ -22,7 +22,7 @@ const theme = createTheme();
 
 
 export default function AddForm(props) {      
-  const regex =  /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;  
+  const regex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;  
   
   let { singleAdd } = useSelector((state) => state.add)
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ export default function AddForm(props) {
         if (value) {
           var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
           var match = value.match(regExp);
-          if (match && match[2].length == 11) {
+          if (match && match[2].length === 11) {
               // Do anything for being valid
               return true;
           }

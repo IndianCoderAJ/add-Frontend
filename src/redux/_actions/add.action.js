@@ -1,7 +1,5 @@
 
 import { toast } from 'react-toastify';
-import domino from 'domino';
-import { getMetadata } from 'page-metadata-parser'
 import { loadingConstants, addConstants, messageConstants } from '../_constants'
 import { getAddService, deleteAddService, addAddServer, getAddByIdService, updateAddService } from '../../_services/add.service'
 
